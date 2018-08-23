@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var gutil = require('gulp-util');
 var through = require('through2');
 var log = require('fancy-log');
 var colors = require('ansi-colors');
