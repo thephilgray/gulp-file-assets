@@ -6,6 +6,7 @@ var gutil = require('gulp-util');
 var through = require('through2');
 var log = require('fancy-log');
 var colors = require('ansi-colors');
+var PluginError = require('plugin-error');
 
 var PLUGIN_NAME = 'gulp-file-assets';
 
@@ -130,7 +131,7 @@ function fileAssets(opts) {
 		if (file.isNull()) {
 			return cb();
 		} else if (file.isStream()) {
-			cb(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
+			cb(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
 		} else if (file.isBuffer()) {
 			parseAssets(file, null, 0, {
 				depth: depth,
