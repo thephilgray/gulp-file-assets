@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var gutil = require('gulp-util');
 var through = require('through2');
+var log = require('fancy-log');
 
 var PLUGIN_NAME = 'gulp-file-assets';
 
@@ -67,7 +68,7 @@ function parseAssets(file, reference, curDepth, opts, push) {
 	}
 
 	if (reference || includeSrc) {
-		gutil.log(PLUGIN_NAME + ':', 'Extract', (reference ? gutil.colors.green(reference) + ' -> ' : '') + gutil.colors.green(relative));
+		log(PLUGIN_NAME + ':', 'Extract', (reference ? gutil.colors.green(reference) + ' -> ' : '') + gutil.colors.green(relative));
 		ignores.push(filePath);
 		push(file);
 	}
