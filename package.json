@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/Lanfei/gulp-file-assets#readme",
   "dependencies": {
-    "gulp-util": "^3.0.7",
     "through2": "^2.0.0"
   },
   "devDependencies": {
