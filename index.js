@@ -7,6 +7,7 @@ var through = require('through2');
 var log = require('fancy-log');
 var colors = require('ansi-colors');
 var PluginError = require('plugin-error');
+var Vinyl = require('vinyl');
 
 var PLUGIN_NAME = 'gulp-file-assets';
 
@@ -95,7 +96,7 @@ function parseAssets(file, reference, curDepth, opts, push) {
 			for (var i = 0, l = files.length; i < l; ++i) {
 				var filename = files[i];
 				if (fs.existsSync(filename)) {
-					var asset = new gutil.File({
+					var asset = new Vinyl({
 						path: filename,
 						base: fileBase,
 						contents: fs.readFileSync(filename)
