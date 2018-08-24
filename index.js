@@ -80,7 +80,7 @@ function parseAssets(file, reference, curDepth, opts, push) {
 	}
 
 	var code = contents.toString();
-	if (new Buffer(code).length === contents.length) {
+	if (Buffer.from(code).length === contents.length) {
 		code.replace(pattern, function ($, url) {
 			if (!isLocal(url)) {
 				return;
